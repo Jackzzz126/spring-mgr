@@ -1,0 +1,24 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="default" targetRuntime="MyBatis3Simple">
+        <!-- MyBatis3Simple, MyBatis3DynamicSql-->
+        <property>
+            <targetJava8>true</targetJava8>
+        </property>
+        <jdbcConnection driverClass="org.hsqldb.jdbcDriver"
+                        connectionURL="jdbc:hsqldb:mem:aname"
+                        userId=""
+                        password=""/>
+
+
+        <javaModelGenerator targetPackage="example.model" targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="example.mapper" targetProject="src/main/resources"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="example.mapper" targetProject="src/main/java"/>
+
+        <table tableName="FooTable" />
+    </context>
+</generatorConfiguration>
