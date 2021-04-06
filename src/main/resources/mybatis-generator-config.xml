@@ -9,7 +9,7 @@
         <property name="useActualColumnNames" value="false"/>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost/mgr"
+                        connectionURL="jdbc:mysql://localhost:3306/mgr"
                         userId="root"
                         password="root"/>
 
@@ -30,6 +30,6 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="user" />
+        <table tableName="user_info" />
     </context>
 </generatorConfiguration>
