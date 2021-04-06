@@ -17,16 +17,16 @@
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.java.mgr.domain" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.jack.mgr.domain" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.java.mgr.mapper"  targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com.jack.mgr.mapper"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.java.mgr.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.jack.mgr.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
