@@ -28,7 +28,7 @@ public class CodeGenerator {
         try {
             List<String> warnings = new ArrayList<String>();
             boolean overwrite = true;
-            ClassPathResource classPathResource = new ClassPathResource("mybatis-generator-config.xml");
+            ClassPathResource classPathResource = new ClassPathResource("config/mybatis-generator-config.xml");
             File configFile = classPathResource.getFile();
             ConfigurationParser cp = new ConfigurationParser(warnings);
             Configuration config = cp.parseConfiguration(configFile);
