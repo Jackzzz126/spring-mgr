@@ -2,14 +2,13 @@ package com.jack.mgr.generator;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Generator
@@ -20,8 +19,8 @@ import java.util.List;
 @Slf4j
 @Service
 public class GeneratorService {
-    @PersistenceContext
-    private EntityManager entityManager;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     public List<ColumnInfo> getColumns(String tableName) {
         List<ColumnInfo> columnInfos = new ArrayList<>();
@@ -37,12 +36,19 @@ public class GeneratorService {
                 .append(tableName)
                 .append("' ")
                 .append("and table_schema = (select database()) order by ordinal_position");
-        Query query = this.entityManager.createNativeQuery(sb.toString());
-        List result = query.getResultList();
-        for (Object o : result) {
-            Object[] objArr = (Object[])o;
-            columnInfos.add(new ColumnInfo(objArr[0],objArr[1],objArr[2],objArr[3],objArr[4],objArr[5]));
+        List<Map<String, Object>> mapList = jdbcTemplate.queryForList(sb.toString());
+
+        for (Map<String, Object> map : mapList) {
+            ColumnInfo columnInfo = new ColumnInfo();
+            columnInfo.setName((String)map.get("column_name"));
+            columnInfo.setNullable((String)map.get("is_nullable"));
+            columnInfo.setType((String)map.get("data_type"));
+            columnInfo.setComment((String)map.get("column_comment"));
+            columnInfo.setKey((String)map.get("column_key"));
+            columnInfo.setExtra((String)map.get("extra"));
+            columnInfos.add(columnInfo);
         }
+
         return columnInfos;
     }
 }
