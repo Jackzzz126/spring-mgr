@@ -50,6 +50,7 @@ public class CodeGenerator {
     void localGenerate() {
         try {
             List<ColumnInfo> columnInfos = generatorService.getColumns("user_info");
+            log.info(columnInfos.toString());
             log.info("local code generate success.");
         } catch (Exception e) {
             log.info("local code generate failed: ", e);
