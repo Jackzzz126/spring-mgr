@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2021/4/7
  */
 @Slf4j
-public class ColumnUtil {
+public class GeneratorUtil {
 
     private static final char SEPARATOR = '_';
 

@@ -19,10 +19,18 @@ import java.util.Map;
 @Slf4j
 @Service
 public class GeneratorService {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
-    public List<ColumnInfo> getColumns(String tableName) {
+    public GeneratorService(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public void generate(String tableName, String packName, boolean restOnly) {
+        List<ColumnInfo> columnInfos = this.getColumns(tableName);
+
+    }
+
+    private List<ColumnInfo> getColumns(String tableName) {
         List<ColumnInfo> columnInfos = new ArrayList<>();
         if(StringUtils.isEmpty(tableName)) {
             log.error("empty table name");

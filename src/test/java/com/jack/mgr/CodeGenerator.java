@@ -49,9 +49,8 @@ public class CodeGenerator {
     @Test
     void localGenerate() {
         try {
-            List<ColumnInfo> columnInfos = generatorService.getColumns("user_info");
-            log.info(columnInfos.toString());
-            log.info("local code generate success.");
+            generatorService.generate("user_info", "com.jack.mgr", false);
+            log.info("local code generate finished.");
         } catch (Exception e) {
             log.info("local code generate failed: ", e);
         }
