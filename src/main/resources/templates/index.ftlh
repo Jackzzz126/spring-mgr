@@ -6,5 +6,6 @@
 </head>
 <body>
 Hello ${name}!
+${.now?string('yyyy-MM-dd hh:mm:ss')}
 </body>
 </html>
