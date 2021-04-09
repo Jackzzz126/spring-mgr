@@ -1,5 +1,7 @@
 package com.jack.mgr.generator;
 
+import freemarker.template.Configuration;
+import freemarker.template.Template;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,11 @@ public class GeneratorService {
 
     public void generate(String tableName, String packName, boolean restOnly) {
         List<ColumnInfo> columnInfos = this.getColumns(tableName);
+        Configuration configuration = new Configuration(Configuration.VERSION_2_3_31);
+        configuration.setClassForTemplateLoading(GeneratorService.class, "/templates/generator");
+
+        //Template template = configuration.getTemplate("rest.ftlh");
+
 
     }
 
