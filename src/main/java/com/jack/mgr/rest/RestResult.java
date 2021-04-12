@@ -12,11 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class RestResult<T> {
-    public static class RtnCode{
+    public static class ReturnCode {
         public static final int OK = 0;
         public static final int UNKNOWN_ERROR = -1;
     }
-
     public int code = 0;
     public String msg = "success";
     public T data;
@@ -31,14 +30,14 @@ public class RestResult<T> {
     }
 
     public static <T> RestResult<T> success() {
-        return new RestResult();
+        return new RestResult<T>();
     }
 
     public static <T> RestResult<T> success(T data) {
-        return new RestResult(data);
+        return new RestResult<T>(data);
     }
 
     public static <T> RestResult<T> error(int code, String msg) {
-        return new RestResult(code, msg);
+        return new RestResult<T>(code, msg);
     }
 }
