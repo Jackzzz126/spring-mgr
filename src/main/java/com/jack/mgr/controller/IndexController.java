@@ -1,5 +1,6 @@
 package com.jack.mgr.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2021/4/7
  */
 @Controller
+@Slf4j
 public class IndexController {
     @RequestMapping(value = "/")
     public String index(Model model) {
