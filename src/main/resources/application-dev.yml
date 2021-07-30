@@ -1,0 +1,17 @@
+#mybatis
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+
+spring:
+    #datasource - mysql
+    datasource:
+        password: root
+        url: jdbc:mysql://localhost:3306/mgr
+        username: root
+    #freemarker
+    freemarker:
+        cache: false
+        charset: UTF-8
+        enabled: true
+        suffix: .ftlh
+        template-loader-path: classpath:/templates/
