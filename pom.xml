@@ -18,11 +18,11 @@
 
 	<properties>
 		<!-- versions -->
-		<java.version>1.8</java.version>
-		<mybatis.springboot.starter.version>2.1.3</mybatis.springboot.starter.version>
-		<mybatis.generater.version>1.4.0</mybatis.generater.version>
-		<apache.comms.configration.version>1.9</apache.comms.configration.version>
-		<version.h2>1.4.200</version.h2>
+		<version.java>1.8</version.java>
+		<version.mybatis.springboot.starter>2.1.3</version.mybatis.springboot.starter>
+		<version.mybatis.generater>1.4.0</version.mybatis.generater>
+		<version.apache.comms.configration>1.9</version.apache.comms.configration>
+		<version.h2>1.4.195</version.h2>
 	</properties>
 
 	<dependencies>
@@ -61,25 +61,24 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>${mybatis.springboot.starter.version}</version>
+			<version>${version.mybatis.springboot.starter}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.generator</groupId>
 			<artifactId>mybatis-generator-core</artifactId>
-			<version>${mybatis.generater.version}</version>
+			<version>${version.mybatis.generater}</version>
 		</dependency>
 		<!-- commons configuration -->
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
-			<version>${apache.comms.configration.version}</version>
+			<version>${version.apache.comms.configration}</version>
 		</dependency>
 		<!-- H2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-			<version>${version.h2}}</version>
+			<version>${version.h2}</version>
 		</dependency>
 	</dependencies>
 
