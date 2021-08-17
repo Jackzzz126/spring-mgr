@@ -22,6 +22,7 @@
 		<mybatis.springboot.starter.version>2.1.3</mybatis.springboot.starter.version>
 		<mybatis.generater.version>1.4.0</mybatis.generater.version>
 		<apache.comms.configration.version>1.9</apache.comms.configration.version>
+		<version.h2>1.4.200</version.h2>
 	</properties>
 
 	<dependencies>
@@ -72,6 +73,13 @@
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
 			<version>${apache.comms.configration.version}</version>
+		</dependency>
+		<!-- H2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+			<version>${version.h2}}</version>
 		</dependency>
 	</dependencies>
 
