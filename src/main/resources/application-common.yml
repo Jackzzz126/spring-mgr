@@ -1,0 +1,12 @@
+#mybatis
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+
+spring:
+    #freemarker
+    freemarker:
+        cache: false
+        charset: UTF-8
+        enabled: true
+        suffix: .ftlh
+        template-loader-path: classpath:/templates/
