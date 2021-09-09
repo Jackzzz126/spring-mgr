@@ -1,17 +1,14 @@
-#mybatis
-mybatis:
-    mapper-locations: classpath:mapper/*.xml
-
 spring:
-    #datasource - mysql
+    #datasource - h2
     datasource:
-        password: root
-        url: jdbc:mysql://localhost:3306/mgr
+        driver-class-name: org.h2.Driver
+        #    schema: classpath:db/schema-h2.sql #初始化建表
+        #    data: classpath:db/data-h2.sql #初始化数据
+        url: jdbc:h2:mem:test   #不持久化，放在内存中
+        #url: jdbc:h2:~/test
         username: root
-    #freemarker
-    freemarker:
-        cache: false
-        charset: UTF-8
-        enabled: true
-        suffix: .ftlh
-        template-loader-path: classpath:/templates/
+        password: root
+    h2:
+        console:
+            path: /h2
+            enabled: true #必须配置，不然无法访问
