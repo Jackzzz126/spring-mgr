@@ -1,6 +1,0 @@
-spring:
-    #datasource - mysql
-    datasource:
-        url: jdbc:mysql://localhost:3306/mgr
-        username: root
-        password: root
