@@ -17,6 +17,13 @@ public class IndexController {
     @RequestMapping(value = "/")
     public String index(Model model) {
         model.addAttribute("name", "Jack");
+
         return "index";
+    }
+
+    @RequestMapping(value = "/test")
+    public String test(Model model, Long id) {
+        log.info("got {}", id);
+        return "";
     }
 }
