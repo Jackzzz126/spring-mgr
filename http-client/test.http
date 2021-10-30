@@ -1,0 +1,10 @@
+GET {{url}}/test?i=99
+Accept: application/json
+Content-Type: application/json
+
+{
+"id": 99
+}
+
+
+###
