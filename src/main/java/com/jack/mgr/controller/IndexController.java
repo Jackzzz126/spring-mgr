@@ -1,5 +1,6 @@
 package com.jack.mgr.controller;
 
+import com.jack.mgr.aop.MgrLogHandler;
 import com.jack.mgr.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -22,6 +23,7 @@ import java.util.Map;
 @Slf4j
 public class IndexController {
     @RequestMapping(value = "/")
+    @MgrLogHandler
     public String index(Model model) {
         model.addAttribute("name", "Jack");
 
